@@ -20,8 +20,8 @@ Projeyi kendi yerel ortamınızda derlemek ve çalıştırmak için bir C derley
 
 ```bash
 # Repoyu klonlayın
-git clone [https://github.com/KULLANICI_ADINIZ/TinyML-Dynamic-Tensor-C.git](https://github.com/KULLANICI_ADINIZ/TinyML-Dynamic-Tensor-C.git)
-cd TinyML-Dynamic-Tensor-C
+git clone https://github.com/nniissaa/Tensor_.git
+cd Tensor_
 
 # Kodu derleyin
 gcc main.c -o tensor_app
