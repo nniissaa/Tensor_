@@ -20,7 +20,7 @@ typedef struct {
     } data;
 } Tensor;
 
-// 2. ADIM: MATRIS BELLEK YONETIMI (Allocation)
+// 2. ADIM: MATRIS BELLEK YONETIMI
 Tensor create_tensor(TensorType type, int rows, int cols) {
     Tensor t;
     t.type = type;
@@ -40,7 +40,7 @@ Tensor create_tensor(TensorType type, int rows, int cols) {
         exit(EXIT_FAILURE);
     }
     
-    // Union icindeki dogru pointer'a adres atamasi (Type Casting)
+    // Union icindeki dogru pointer'a adres atamasi
     if (type == TYPE_F32) t.data.f32 = (float*)mem;
     else if (type == TYPE_F16) t.data.f16 = (int16_t*)mem;
     else t.data.i8 = (int8_t*)mem;
@@ -58,7 +58,7 @@ void quantize_to_i8(Tensor* src, Tensor* dest) {
             // Indeks Formulu: (satir_no * toplam_sutun) + sutun_no
             int index = i * src->cols + j;
             
-            // Gercekci bir TinyML scale (olcek) simülasyonu
+            
             float val = src->data.f32[index] * 127.0f;
             
             // Clamping: Degerin 8-bit sinirlari (-128 ile 127) disina cikmasini engeller
@@ -97,7 +97,7 @@ void print_technical_report(Tensor* t, const char* label) {
 }
 
 int main() {
-    // Matris yonetimini gostermek icin 2 satir, 3 sutunluk bir yapi sectik
+   
     int rows = 2;
     int cols = 3;
     
